@@ -1,0 +1,29 @@
+[
+  {
+    "id": "light_1",
+    "name": "Living Room Ceiling",
+    "controlUrl": null,
+    "state": false,
+    "brightness": 100,
+    "dimmable": true,
+    "createdAt": "2024-01-01T10:00:00.000Z"
+  },
+  {
+    "id": "light_2",
+    "name": "Bedroom Lamp",
+    "controlUrl": null,
+    "state": false,
+    "brightness": 100,
+    "dimmable": true,
+    "createdAt": "2024-01-01T10:00:00.000Z"
+  },
+  {
+    "id": "light_3",
+    "name": "Kitchen Light",
+    "controlUrl": null,
+    "state": false,
+    "brightness": 100,
+    "dimmable": false,
+    "createdAt": "2024-01-01T10:00:00.000Z"
+  }
+]

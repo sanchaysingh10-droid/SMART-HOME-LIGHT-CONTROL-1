@@ -1,0 +1,20 @@
+[
+  {
+    "id": "group_1",
+    "name": "Living Room",
+    "lightIds": ["light_1"],
+    "createdAt": "2024-01-01T10:00:00.000Z"
+  },
+  {
+    "id": "group_2",
+    "name": "Bedroom",
+    "lightIds": ["light_2"],
+    "createdAt": "2024-01-01T10:00:00.000Z"
+  },
+  {
+    "id": "group_3",
+    "name": "Kitchen",
+    "lightIds": ["light_3"],
+    "createdAt": "2024-01-01T10:00:00.000Z"
+  }
+]

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Home Light Control</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💡 Smart Home Light Control</h1>
+            <p class="subtitle">Control your lights remotely and locally</p>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab-button active" data-tab="lights">Lights</button>
+            <button class="tab-button" data-tab="groups">Groups</button>
+            <button class="tab-button" data-tab="schedules">Schedules</button>
+        </nav>
+
+        <!-- Lights Tab -->
+        <div id="lights" class="tab-content active">
+            <section class="section">
+                <h2>Add New Light</h2>
+                <form id="addLightForm" class="form">
+                    <input type="text" id="lightName" placeholder="Light Name (e.g., Living Room Lamp)" required>
+                    <label>
+                        <input type="checkbox" id="lightDimmable" checked>
+                        Dimmable Light
+                    </label>
+                    <input type="url" id="lightControlUrl" placeholder="Control URL (optional, for HTTP lights)">
+                    <button type="submit" class="btn btn-primary">Add Light</button>
+                </form>
+            </section>
+
+            <section class="section">
+                <h2>Your Lights</h2>
+                <div id="lightsList" class="lights-grid"></div>
+                <p id="noLights" class="empty-state">No lights yet. Add one to get started!</p>
+            </section>
+        </div>
+
+        <!-- Groups Tab -->
+        <div id="groups" class="tab-content">
+            <section class="section">
+                <h2>Create New Group</h2>
+                <form id="addGroupForm" class="form">
+                    <input type="text" id="groupName" placeholder="Group Name (e.g., Living Room)" required>
+                    <select id="groupLights" multiple>
+                        <option disabled>Select lights to add...</option>
+                    </select>
+                    <button type="submit" class="btn btn-primary">Create Group</button>
+                </form>
+            </section>
+
+            <section class="section">
+                <h2>Your Groups</h2>
+                <div id="groupsList" class="groups-list"></div>
+                <p id="noGroups" class="empty-state">No groups yet. Create one to manage multiple lights together!</p>
+            </section>
+        </div>
+
+        <!-- Schedules Tab -->
+        <div id="schedules" class="tab-content">
+            <section class="section">
+                <h2>Create Schedule</h2>
+                <form id="addScheduleForm" class="form">
+                    <select id="scheduleLightId" required>
+                        <option value="">Select a light...</option>
+                    </select>
+                    <select id="scheduleAction" required>
+                        <option value="on">Turn On</option>
+                        <option value="off">Turn Off</option>
+                    </select>
+                    <input type="time" id="scheduleTime" required>
+                    <button type="submit" class="btn btn-primary">Create Schedule</button>
+                </form>
+            </section>
+
+            <section class="section">
+                <h2>Your Schedules</h2>
+                <div id="schedulesList" class="schedules-list"></div>
+                <p id="noSchedules" class="empty-state">No schedules yet. Create one to automate your lights!</p>
+            </section>
+        </div>
+    </div>
+
+    <!-- Modal for detailed light control -->
+    <div id="lightModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalLightName"></h2>
+            <div class="modal-body">
+                <div class="control-group">
+                    <label>Power</label>
+                    <div class="button-group">
+                        <button id="modalTurnOn" class="btn btn-secondary">Turn On</button>
+                        <button id="modalTurnOff" class="btn btn-secondary">Turn Off</button>
+                    </div>
+                </div>
+                <div class="control-group" id="brightnessControl">
+                    <label for="modalBrightness">Brightness: <span id="brightnessValue">100</span>%</label>
+                    <input type="range" id="modalBrightness" min="0" max="100" value="100">
+                </div>
+                <button id="modalDelete" class="btn btn-danger">Delete Light</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
