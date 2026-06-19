@@ -1,5 +1,5 @@
 # 💡 Smart Home Light Control System
-
+#SANCHAYSINGHCITS4694
 A lightweight, single-user smart home light control system for local networks. Control your lights remotely via a web dashboard with support for on/off, brightness adjustment, grouping, and time-based scheduling.
 
 ## ✨ Features
